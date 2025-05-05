@@ -40,9 +40,10 @@ body {
 .input {
     padding: 5px;
     outline: none;
+    width: 300px;
 }
 
-button {
+.button {
     padding: 6px 12px;
     border: 1px solid transparent;
     border-radius: 4px;
@@ -54,7 +55,12 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.button:hover {
     background-color: #449d44;
     border: 1px solid #398439;
+}
+
+p {
+    color: red;
+    font-size: 20px;
 }
