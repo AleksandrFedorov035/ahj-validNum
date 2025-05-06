@@ -31,7 +31,7 @@ export default class Widget {
     }
 
     addInnerHtml() {
-        this.parentEl.appendChild(this.renderForm());
+        this.parentEl.insertAdjacentHTML('beforeend', this.renderForm())
 
         this.input = document.querySelector('.input');
         this.input.addEventListener('keyup', this.checkNumber);
