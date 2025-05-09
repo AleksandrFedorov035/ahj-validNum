@@ -37,20 +37,25 @@ export default class Widget {
         this.input.addEventListener('keyup', this.checkNumber);
     }
 
-    addClass() {
+    addClass(message) {
         const cards = document.querySelectorAll('.card');
-        cards.forEach((el) => {
-            el.classList.add('active');
-        });
+
+        if(message == 'remove') {
+            cards.forEach((el) => {
+                el.classList.remove('active');
+            });
+        } else {
+            cards.forEach((el) => {
+                el.classList.add('active');
+            });
+        }
     }
 
     checkNumber() {
         const value = this.input.value.trim();
         const cards = document.querySelectorAll('.card');
         if (value.length > 0) {
-            cards.forEach((el) => {
-                el.classList.remove('active');
-            });
+            this.addClass('remove')
 
             switch (value.charAt(0)) {
                 case '2':
@@ -69,7 +74,7 @@ export default class Widget {
                     cards[2].classList.add('active'); break;
             }
         } else {
-            this.addClass()
+            this.addClass('add')
         }
     }
 
